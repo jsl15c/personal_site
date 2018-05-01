@@ -82,7 +82,7 @@ div {
       text-align:center;
       z-index:0;
       font-family: monospace;
-      overflow: scroll;
+      overflow: hidden;
       >div {
         display: flex;
         align-items: center;
