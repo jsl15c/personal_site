@@ -194,14 +194,11 @@ a {
         .sd-container {
           display: flex;
           flex-direction: row;
-          height:180px;
           flex-wrap: wrap;
 
           .skill-detail {
-            // background:cyan;
+            height:auto;
             flex: 1 1 200px;
-            margin:10px;
-            padding:20px;
             ul {
               list-style-type: none;
               padding:0;
