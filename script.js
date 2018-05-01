@@ -1,4 +1,5 @@
 $(()=> {
+  $('body').css('opacity', '1');
   $('.btn').click(()=> {
     if ($('.btn').hasClass('active')) {
       $('.a').toggleClass('one-full-height');
@@ -47,4 +48,40 @@ $(()=> {
     $('.slide-info').removeClass('slide-active');
     $('.slide-info div').removeClass('block');
   });
+  animateColor();
 });
+
+function animateColor() {
+  let decreaseColor = false;
+  let decreasePercent = false;
+  let colorCounter = 0;
+  let angleCounter = 0;
+  let percentCounter = 100;
+
+  setInterval(() => {
+    // controls angleCounter
+    angleCounter++;
+
+    // entire block controls colorCounter
+    if (colorCounter === 256) {
+      decreaseColor = !decreaseColor;
+      colorCounter--;
+    }
+    else if (decreaseColor === true) {
+
+      if (colorCounter === 0) {
+        decreaseColor = !decreaseColor;
+      }
+      else {
+        colorCounter--;
+        console.log(colorCounter);
+      }
+    }
+    else {
+      colorCounter++;
+    }
+    $('.gradient-box').css('background-image',
+    `linear-gradient(-${angleCounter}deg, #8100FF 0%, rgb(${colorCounter}, 178, 254) ${percentCounter}%)`
+  );
+}, 10);
+}
