@@ -25,7 +25,7 @@ div {
     transition:0.3s linear;
     -webkit-transition:0.3s linear;
     top:0;left:0;
-    z-index:2
+    z-index:2;
   }
 
   .a {
@@ -41,12 +41,21 @@ div {
   }
 
   .btn {
+    font-family: monospace;
     position: absolute;
     z-index:3;
+    background:#000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:50px;
     height:50px;
-    background:#000;
     transition-delay: 0.5s;
+
+    span {
+      color:#fff;
+    }
   }
 
   .text {
@@ -70,11 +79,14 @@ div {
       background:royalblue;
       position: absolute;
       text-align:center;
+      z-index:4;
       div {
+        display: flex;
+        transition:0.2s ease-in-out;
         width:100%;
         height:calc(100%/3);
+        cursor: pointer;
       }
-
       div:nth-child(1) {
         background:#F2F2F2;
       }
@@ -84,11 +96,20 @@ div {
       div:nth-child(3) {
         background:#D8D8D8;
       }
+
+      div:hover {
+        background:royalblue;
+      }
     }
 }
 
 .active {
   background:#fff!important;
+}
+
+.active-color {
+  transition-delay: 0s;
+  color:#000!important;
 }
 
 .one-full-height {
