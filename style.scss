@@ -59,6 +59,8 @@ div {
   }
 
   .text {
+    position:relative;
+    z-index:2;
     font-family: monospace;
     display: flex;
     flex-direction: column;
@@ -76,29 +78,59 @@ div {
       -webkit-transition:0.2s linear;
       transition-delay: 0.4s;
       opacity:0;
-      background:royalblue;
       position: absolute;
       text-align:center;
-      z-index:4;
-      div {
+      z-index:0;
+      font-family: monospace;
+      overflow: scroll;
+      >div {
         display: flex;
+        align-items: center;
+        justify-content: center;
         transition:0.2s ease-in-out;
         width:100%;
         height:calc(100%/3);
         cursor: pointer;
       }
-      div:nth-child(1) {
+
+      .about:hover,
+      .projects:hover,
+      .skills:hover {
+        background:#fff;
+      }
+
+      .about {
         background:#F2F2F2;
       }
-      div:nth-child(2) {
+      .projects {
         background:#E5E5E5;
       }
-      div:nth-child(3) {
+      .skills {
         background:#D8D8D8;
       }
 
       div:hover {
-        background:royalblue;
+        // background:royalblue;
+      }
+      .slide-info {
+        text-align: left;
+        height:100%;
+        transition:0.3s ease-in;
+        position: absolute;
+        top:-100%;
+        background:yellow;
+        overflow: hidden;
+        padding:20px;
+        cursor:default;
+
+        .close-info {
+          margin-top:0;
+          cursor: pointer;
+        }
+
+        div {
+          display:none;
+        }
       }
     }
 }
@@ -130,4 +162,13 @@ div {
 
 .open {
   opacity:1!important;
+  z-index: 4!important;
+}
+
+.slide-active {
+  top:0px!important;
+}
+
+.block {
+  display:block!important;
 }
