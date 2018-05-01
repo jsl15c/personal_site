@@ -14,6 +14,11 @@ div, p, h1, h2 {
   -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
 
+a {
+  // text-decoration: none;
+  color:royalblue;
+}
+
 @media screen and (max-width:889px) {
   .a {
     border-top:20px solid #000!important;
@@ -58,21 +63,21 @@ div, p, h1, h2 {
   }
 
   .a {
-    border-top:50px solid #000;
-    border-right:50px solid #000;
+    border-top:20px solid #000;
+    border-right:20px solid #000;
     height:0px;
   }
 
   .b {
-    border-left:50px solid #000;
-    border-bottom:50px solid #000;
+    border-left:20px solid #000;
+    border-bottom:20px solid #000;
     width:0;
   }
 
   .btn {
     font-family: monospace;
     position: absolute;
-    z-index:3;
+    z-index:6;
     background:#000;
     cursor: pointer;
     display: flex;
@@ -100,9 +105,9 @@ div, p, h1, h2 {
   }
 
     .menu {
-      top:50px;left:50px;
-      height:calc(100% - 100px);
-      width:calc(100% - 100px);
+      top:20px;left:20px;
+      height:calc(100% - 40px);
+      width:calc(100% - 40px);
       transition:0.2s linear;
       -webkit-transition:0.2s linear;
       transition-delay: 0.4s;
@@ -148,9 +153,10 @@ div, p, h1, h2 {
         position: absolute;
         top:-100%;
         background:#fff;
-        overflow: hidden;
+        overflow: scroll;
         padding:20px;
         cursor:default;
+        -ms-overflow-style: none;
 
         .close-info {
           margin-top:0;
@@ -158,15 +164,38 @@ div, p, h1, h2 {
           cursor: pointer;
         }
 
-        div {
+        >div {
           display:none;
         }
       }
+      .slide-info::-webkit-scrollbar {
+        width:0!important;
+      }
+
+      .skill-info {
+        .sd-container {
+          display: flex;
+          flex-direction: row;
+          height:180px;
+          flex-wrap: wrap;
+
+          .skill-detail {
+            background:cyan;
+            flex: 1 1 200px;
+            margin:10px;
+            padding:20px;
+            ul {
+              list-style-type: none;
+              padding:0;
+            }
+          }
+        }
+      }
     }
-}
+  }
 
 .active {
-  background:#fff!important;
+  // background:#fff!important;
 }
 
 .active-color {
