@@ -116,8 +116,10 @@ a {
       -webkit-margin-end: 0px;
       a {
         color:#000;
-        margin-left:20px;
         font-size: 1.5em;
+      }
+      a:not(:first-child) {
+        margin-left:20px;
       }
     }
   }
@@ -172,7 +174,7 @@ a {
         top:-100%;
         background:#fff;
         overflow: scroll;
-        padding:20px;
+        padding:20px 32px;
         cursor:default;
         -ms-overflow-style: none;
 
