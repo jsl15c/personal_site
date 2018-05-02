@@ -21,7 +21,7 @@ div, p, h1, h2 {
 
 a {
   // text-decoration: none;
-  color:royalblue;
+  color:inherit;
 }
 
 @media screen and (max-width:889px) {
@@ -192,6 +192,37 @@ a {
         width:0!important;
       }
 
+      .about-info {
+        ul {
+          padding-left:16px;
+        }
+      }
+
+      .projects-info{
+        .pt-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          .pt-details {
+            height:auto;
+            max-height: 250px;
+            max-width:200px;
+            flex: 1 1 200px;
+            margin: 10px;
+            padding: 20px;
+            border:1px solid #000;
+            transition:0.3s linear;
+            h3 {
+              margin-top:0;
+            }
+          }
+          .pt-details:hover {
+            background:#000!important;
+            color:#fff!important;
+          }
+        }
+      }
+
       .skill-info {
         .sd-container {
           display: flex;
@@ -200,7 +231,7 @@ a {
 
           .skill-detail {
             height:auto;
-            flex: 1 1 200px;
+            flex: 0 1 200px;
             ul {
               list-style-type: none;
               padding:0;

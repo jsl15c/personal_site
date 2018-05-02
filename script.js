@@ -74,7 +74,6 @@ function animateColor() {
       }
       else {
         colorCounter--;
-        console.log(colorCounter);
       }
     }
     else {
