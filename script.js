@@ -1,5 +1,6 @@
 $(()=> {
-  $('body').css('opacity', '1');
+  $('.container-padding').css('opacity', '1');
+  $('.container-padding').css('transform', 'translateY(0)');
   $('.btn').click(()=> {
     if ($('.btn').hasClass('active')) {
       $('.a').toggleClass('one-full-height');
@@ -61,14 +62,12 @@ function animateColor() {
   setInterval(() => {
     // controls angleCounter
     angleCounter++;
-
     // entire block controls colorCounter
     if (colorCounter === 256) {
       decreaseColor = !decreaseColor;
       colorCounter--;
     }
     else if (decreaseColor === true) {
-
       if (colorCounter === 0) {
         decreaseColor = !decreaseColor;
       }
