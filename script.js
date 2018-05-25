@@ -1,7 +1,7 @@
 $(document).ready(() => {
-  $('.menu').css('display', 'block');
   $('.container-padding').css('opacity', '1');
   $('.container-padding').css('transform', 'translateY(0)');
+  $('.menu').css('display', 'block');
   $('.btn').click(()=> {
     if ($('.btn').hasClass('active')) {
       $('.a').toggleClass('one-full-height');
