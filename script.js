@@ -1,4 +1,5 @@
 $(()=> {
+  $('body').css('opacity', '1');
   $('.container-padding').css('opacity', '1');
   $('.container-padding').css('transform', 'translateY(0)');
   $('.btn').click(()=> {
