@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-  opacity: 0;
+  // opacity: 0;
 }
 
 div {
@@ -127,6 +127,7 @@ a {
   }
 
     .menu {
+      display: none;
       top:20px;left:20px;
       height:calc(100% - 40px);
       width:calc(100% - 40px);

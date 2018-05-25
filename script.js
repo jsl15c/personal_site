@@ -1,5 +1,5 @@
-$(()=> {
-  $('body').css('opacity', '1');
+$(document).ready(() => {
+  $('.menu').css('display', 'block');
   $('.container-padding').css('opacity', '1');
   $('.container-padding').css('transform', 'translateY(0)');
   $('.btn').click(()=> {
