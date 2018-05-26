@@ -7,7 +7,7 @@ $(document).ready(() => {
       $('.a').toggleClass('one-full-height');
       $('.b').toggleClass('two-full-width');
       $('.btn').toggleClass('active');
-      // $('.btn>span').toggleClass('active-color');  
+      // $('.btn>span').toggleClass('active-color');
       $('.menu').toggleClass('open');
       $('.btn span')[0].innerHTML = 'menu';
       $('.slide-info').removeClass('slide-active');
@@ -81,6 +81,9 @@ function animateColor() {
     }
     $('.gradient-box').css('background-image',
     `linear-gradient(-${angleCounter}deg, #8100FF 0%, rgb(${colorCounter}, 178, 254) ${percentCounter}%)`
+  );
+  $('.gradient-box').css('background-image',
+  `-webkit-linear-gradient(-${angleCounter}deg, #8100FF 0%, rgb(${colorCounter}, 178, 254) ${percentCounter}%)`
   );
 }, 10);
 }
