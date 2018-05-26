@@ -60,6 +60,21 @@ function animateColor() {
   let angleCounter = 0;
   let percentCounter = 100;
 
+  let cssFunction;
+  if (/Chrome/.test(navigator.userAgent) || /Safari/.test(navigator.userAgent)) {
+    cssFunction = ((angleCounter, colorCounter, percentCounter) => {
+      $('.gradient-box').css('background-image',
+      `-webkit-linear-gradient(-${angleCounter}deg, #8100FF 0%, rgb(${colorCounter}, 178, 254) ${percentCounter}%)`
+    );
+  });
+
+  } else {
+    cssFunction = (() => {
+      $('.gradient-box').css('background-image',
+      `linear-gradient(-${angleCounter}deg, #8100FF 0%, rgb(${colorCounter}, 178, 254) ${percentCounter}%)`
+      );
+    });
+  }
   setInterval(() => {
     // controls angleCounter
     angleCounter++;
@@ -79,11 +94,6 @@ function animateColor() {
     else {
       colorCounter++;
     }
-    $('.gradient-box').css('background-image',
-    `linear-gradient(-${angleCounter}deg, #8100FF 0%, rgb(${colorCounter}, 178, 254) ${percentCounter}%)`
-  );
-  $('.gradient-box').css('background-image',
-  `-webkit-linear-gradient(-${angleCounter}deg, #8100FF 0%, rgb(${colorCounter}, 178, 254) ${percentCounter}%)`
-  );
+    cssFunction(angleCounter, colorCounter, percentCounter);
 }, 10);
 }
